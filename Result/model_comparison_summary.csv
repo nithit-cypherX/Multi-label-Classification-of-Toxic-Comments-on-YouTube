@@ -1,0 +1,5 @@
+Model,Micro-F1,Macro-F1,Weighted-F1,Hamming Loss,Subset Acc,Jaccard,Train Time (s)
+Naive Bayes,0.4863,0.3085,0.4363,0.2536,0.395,0.5182,0.05
+Logistic Regression,0.6007,0.5572,0.6041,0.2364,0.335,0.5302,52.29
+Linear SVM,0.619,0.5399,0.6064,0.2057,0.45,0.6002,0.96
+DistilBERT,0.6702,0.6146,0.6776,0.22,0.39,0.6275,95.69
