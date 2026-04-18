@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Toxic Comment Detector",
+  "version": "1.0",
+  "description": "Detects toxic comments on YouTube using fine-tuned DistilBERT. Click the extension icon then press Analyze to scan comments on the current page.",
+
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "https://www.youtube.com/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
