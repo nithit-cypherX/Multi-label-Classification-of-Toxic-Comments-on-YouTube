@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 280px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .header-icon { font-size: 22px; }
+
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    #analyzeBtn {
+      width: 100%;
+      padding: 10px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.15s;
+    }
+
+    #analyzeBtn:hover { background: #cc0000; }
+    #analyzeBtn:disabled { background: #555; cursor: not-allowed; }
+
+    #status {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+      min-height: 18px;
+    }
+
+    #results {
+      margin-top: 12px;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #222;
+      font-size: 12px;
+    }
+
+    .result-row:last-child { border-bottom: none; }
+
+    .result-label { color: #ccc; }
+
+    .result-count {
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+    }
+
+    .count-toxic    { background: #7f0000; color: #ff9999; }
+    .count-clean    { background: #003300; color: #99ff99; }
+    .count-neutral  { background: #333;    color: #aaa;    }
+
+    .divider {
+      height: 1px;
+      background: #222;
+      margin: 12px 0;
+    }
+
+    .footer {
+      font-size: 10px;
+      color: #555;
+      text-align: center;
+    }
+
+    #clearBtn {
+      width: 100%;
+      padding: 7px;
+      background: transparent;
+      color: #888;
+      border: 1px solid #333;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: border-color 0.15s;
+    }
+
+    #clearBtn:hover { border-color: #555; color: #ccc; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-icon">🛡️</div>
+    <div>
+      <div class="title">Toxic Comment Detector</div>
+      <div class="subtitle">Powered by DistilBERT</div>
+    </div>
+  </div>
+
+  <button id="analyzeBtn">🔍 Analyze Comments</button>
+  <div id="status">Open a YouTube video to get started.</div>
+  <div id="results"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* style.css — injected into YouTube pages */
+
+/* ── Toxic comment highlight ────────────────────────────────────────────────── */
+.toxic-comment-highlight {
+  border-left: 4px solid #ff4444 !important;
+  background: rgba(255, 68, 68, 0.08) !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 8px 8px 8px 12px !important;
+  margin: 4px 0 4px -16px !important;
+  transition: background 0.2s;
+}
+
+/* ── Badge row above the comment text ───────────────────────────────────────── */
+.toxic-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+/* ── Individual label chip ──────────────────────────────────────────────────── */
+.toxic-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 10px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Roboto', Arial, sans-serif;
+  letter-spacing: 0.4px;
+  background: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}

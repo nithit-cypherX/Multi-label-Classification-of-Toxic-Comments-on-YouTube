@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  toxic-api:
+    build: .
+    container_name: toxic-classifier-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount saved_models from host — avoids copying 300MB+ model files into the image
+      # Update the left side if your project is in a different path
+      - ./saved_models:/app/saved_models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

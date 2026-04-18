@@ -1,0 +1,13 @@
+# Large model files — too big for GitHub (use locally only)
+saved_models/bert_checkpoint.pth
+saved_models/distilbert/model.safetensors
+saved_models/preprocessed_cache.pkl
+saved_models/lstm_checkpoint.pth
+
+# Python cache
+__pycache__/
+*.pyc
+.env
+
+# Data (download from Kaggle separately)
+data/
